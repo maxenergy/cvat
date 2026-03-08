@@ -5,6 +5,7 @@
 import React, { useCallback } from 'react';
 import Button from 'antd/lib/button';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { selectionActions } from 'actions/selection-actions';
 
 interface ResourceSelectionInfoProps {
@@ -16,6 +17,7 @@ export function ResourceSelectionInfo(
     { selectedCount, onSelectAll }: Readonly<ResourceSelectionInfoProps>,
 ): JSX.Element | null {
     const dispatch = useDispatch();
+    const { t } = useTranslation('common');
 
     const handleDeselectAll = useCallback(() => {
         dispatch(selectionActions.clearSelectedResources());
@@ -32,7 +34,7 @@ export function ResourceSelectionInfo(
                 size='small'
                 type='link'
             >
-                Select all
+                {t('resourceSelection.selectAll')}
             </Button>
         );
     } else if (selectedCount > 0) {
@@ -44,7 +46,7 @@ export function ResourceSelectionInfo(
                 size='small'
                 type='link'
             >
-                Deselect
+                {t('resourceSelection.deselect')}
             </Button>
         );
     }
@@ -54,7 +56,7 @@ export function ResourceSelectionInfo(
             {actionButton}
             {selectedCount > 1 && (
                 <span className='cvat-resource-selection-count'>
-                    {`Selected: ${selectedCount}`}
+                    {t('resourceSelection.selected', { count: selectedCount })}
                 </span>
             )}
         </span>

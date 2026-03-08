@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 import React, { RefObject } from 'react';
+import { useTranslation } from 'react-i18next';
 import Input from 'antd/lib/input';
 import Form, { FormInstance } from 'antd/lib/form';
 import { PercentageOutlined } from '@ant-design/icons';
@@ -26,6 +27,7 @@ interface Props {
     onSubmit(values: QualityConfiguration): Promise<void>;
     onChangeFrameSelectionMethod: (method: FrameSelectionMethod) => void;
     onChangeValidationMode: (method: ValidationMode) => void;
+    t?: any;
 }
 
 export enum ValidationMode {
@@ -34,7 +36,7 @@ export enum ValidationMode {
     HONEYPOTS = 'gt_pool',
 }
 
-export default class QualityConfigurationForm extends React.PureComponent<Props> {
+class QualityConfigurationForm extends React.PureComponent<Props> {
     private formRef: RefObject<FormInstance>;
 
     public constructor(props: Props) {
@@ -67,22 +69,26 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
     }
 
     private gtParamsBlock(): JSX.Element {
-        const { frameSelectionMethod, onChangeFrameSelectionMethod } = this.props;
+        const { frameSelectionMethod, onChangeFrameSelectionMethod, t } = this.props;
 
         return (
             <>
                 <Col>
                     <Form.Item
                         name='frameSelectionMethod'
-                        label='Frame selection method'
-                        rules={[{ required: true, message: 'Please, specify frame selection method' }]}
+                        label={t('tasks:createTask.frameSelectionMethod.label')}
+                        rules={[{ required: true, message: t('validation:frameSelectionRequired') }]}
                     >
                         <Select
                             className='cvat-select-frame-selection-method'
                             onChange={onChangeFrameSelectionMethod}
                         >
-                            <Select.Option value={FrameSelectionMethod.RANDOM}>Random</Select.Option>
-                            <Select.Option value={FrameSelectionMethod.RANDOM_PER_JOB}>Random per job</Select.Option>
+                            <Select.Option value={FrameSelectionMethod.RANDOM}>
+                                {t('tasks:createTask.frameSelectionMethod.random')}
+                            </Select.Option>
+                            <Select.Option value={FrameSelectionMethod.RANDOM_PER_JOB}>
+                                {t('tasks:createTask.frameSelectionMethod.randomPerJob')}
+                            </Select.Option>
                         </Select>
                     </Form.Item>
                 </Col>
@@ -91,13 +97,13 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
                     frameSelectionMethod === FrameSelectionMethod.RANDOM && (
                         <Col span={7}>
                             <Form.Item
-                                label='Quantity'
+                                label={t('tasks:createTask.quantity.label')}
                                 name='validationFramesPercent'
                                 normalize={(value) => +value}
                                 rules={[
-                                    { required: true, message: 'The field is required' },
+                                    { required: true, message: t('validation:required') },
                                     {
-                                        type: 'number', min: 0, max: 100, message: 'Value is not valid',
+                                        type: 'number', min: 0, max: 100, message: t('validation:numberRange'),
                                     },
                                 ]}
                             >
@@ -116,13 +122,13 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
                     frameSelectionMethod === FrameSelectionMethod.RANDOM_PER_JOB && (
                         <Col span={7}>
                             <Form.Item
-                                label='Quantity per job'
+                                label={t('tasks:createTask.quantityPerJob.label')}
                                 name='validationFramesPerJobPercent'
                                 normalize={(value) => +value}
                                 rules={[
-                                    { required: true, message: 'The field is required' },
+                                    { required: true, message: t('validation:required') },
                                     {
-                                        type: 'number', min: 0, max: 100, message: 'Value is not valid',
+                                        type: 'number', min: 0, max: 100, message: t('validation:numberRange'),
                                     },
                                 ]}
                             >
@@ -142,17 +148,18 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
     }
 
     private honeypotsParamsBlock(): JSX.Element {
+        const { t } = this.props;
         return (
             <Row>
                 <Col span={7}>
                     <Form.Item
-                        label='Total honeypots'
+                        label={t('tasks:createTask.totalHoneypots.label')}
                         name='validationFramesPercent'
                         normalize={(value) => +value}
                         rules={[
-                            { required: true, message: 'The field is required' },
+                            { required: true, message: t('validation:required') },
                             {
-                                type: 'number', min: 0, max: 100, message: 'Value is not valid',
+                                type: 'number', min: 0, max: 100, message: t('validation:numberRange'),
                             },
                         ]}
                     >
@@ -161,13 +168,13 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
                 </Col>
                 <Col span={7} offset={1}>
                     <Form.Item
-                        label='Overhead per job'
+                        label={t('tasks:createTask.overheadPerJob.label')}
                         name='validationFramesPerJobPercent'
                         normalize={(value) => +value}
                         rules={[
-                            { required: true, message: 'The field is required' },
+                            { required: true, message: t('validation:required') },
                             {
-                                type: 'number', min: 0, max: 100, message: 'Value is not valid',
+                                type: 'number', min: 0, max: 100, message: t('validation:numberRange'),
                             },
                         ]}
                     >
@@ -179,7 +186,7 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
     }
 
     public render(): JSX.Element {
-        const { initialValues, validationMode, onChangeValidationMode } = this.props;
+        const { initialValues, validationMode, onChangeValidationMode, t } = this.props;
 
         let paramsBlock: JSX.Element | null = null;
         if (validationMode === ValidationMode.GT) {
@@ -195,7 +202,7 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
                 ref={this.formRef}
             >
                 <Form.Item
-                    label='Validation mode'
+                    label={t('tasks:createTask.validationMode.label')}
                     name='validationMode'
                     rules={[{ required: true }]}
                 >
@@ -206,13 +213,13 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
                         }}
                     >
                         <Radio.Button value={ValidationMode.NONE} key={ValidationMode.NONE}>
-                            None
+                            {t('tasks:createTask.validationMode.none')}
                         </Radio.Button>
                         <Radio.Button value={ValidationMode.GT} key={ValidationMode.GT}>
-                            Ground Truth
+                            {t('tasks:createTask.validationMode.groundTruth')}
                         </Radio.Button>
                         <Radio.Button value={ValidationMode.HONEYPOTS} key={ValidationMode.HONEYPOTS}>
-                            Honeypots
+                            {t('tasks:createTask.validationMode.honeypots')}
                         </Radio.Button>
                     </Radio.Group>
                 </Form.Item>
@@ -221,3 +228,10 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
         );
     }
 }
+
+function QualityConfigurationFormWrapper(props: Omit<Props, 't'>): JSX.Element {
+    const { t } = useTranslation(['tasks', 'validation']);
+    return <QualityConfigurationForm {...props} t={t} />;
+}
+
+export default QualityConfigurationFormWrapper;

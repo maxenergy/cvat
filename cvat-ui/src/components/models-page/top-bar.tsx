@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import { Row, Col } from 'antd/lib/grid';
 import Input from 'antd/lib/input';
+import { useTranslation } from 'react-i18next';
 import {
     SortingComponent,
     ResourceFilterHOC,
@@ -38,6 +39,7 @@ export default function TopBarComponent(props: Readonly<VisibleTopBarProps>): JS
     } = props;
     const [visibility, setVisibility] = useState(defaultVisibility);
     const plugins = usePlugins((state: CombinedState) => state.plugins.components.modelsPage.topBar.items, props);
+    const { t } = useTranslation('models');
     const controls = [];
     if (plugins.length) {
         controls.push(
@@ -60,7 +62,7 @@ export default function TopBarComponent(props: Readonly<VisibleTopBarProps>): JS
                             }}
                             defaultValue={query.search || ''}
                             className='cvat-models-page-search-bar'
-                            placeholder='Search ...'
+                            placeholder={t('topBar.searchPlaceholder')}
                         />
                         <ResourceSelectionInfo selectedCount={selectedCount} onSelectAll={onSelectAll} />
                     </div>

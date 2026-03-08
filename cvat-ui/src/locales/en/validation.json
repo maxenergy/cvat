@@ -1,0 +1,14 @@
+{
+    "required": "The field is required",
+    "taskNameEmpty": "Task name cannot be empty",
+    "urlInvalid": "URL is not a valid URL",
+    "segmentSizeOverlap": "Segment size must be more than overlap size",
+    "startFrameStopFrame": "Start frame must not be more than stop frame",
+    "integerMin": "Value must be an integer greater than or equal to {{min}}",
+    "integerMax": "Value must be an integer less than or equal to {{max}}",
+    "integerRange": "Value must be an integer between {{min}} and {{max}}",
+    "numberRange": "Value is not valid",
+    "frameSelectionRequired": "Please, specify frame selection method",
+    "projectNameRequired": "Please, specify a name",
+    "issueTrackerInvalid": "Issue tracker must be URL"
+}

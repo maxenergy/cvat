@@ -10,6 +10,7 @@ import Collapse from 'antd/lib/collapse';
 import InputNumber from 'antd/lib/input-number';
 import Tag from 'antd/lib/tag';
 import Tooltip from 'antd/lib/tooltip';
+import { useTranslation } from 'react-i18next';
 
 import { Source } from 'cvat-core-wrapper';
 import ItemAttribute from './object-item-attribute';
@@ -69,6 +70,7 @@ function ItemAttributesComponent(props: Props): JSX.Element | null {
         collapsed, attributes, values, readonly, changeAttribute, collapse,
         sizeParams, changeSize, source, score, votes,
     } = props;
+    const { t } = useTranslation('annotations');
 
     const isConsensus = source === Source.CONSENSUS;
     const withScore = isConsensus;
@@ -84,7 +86,7 @@ function ItemAttributesComponent(props: Props): JSX.Element | null {
 
     const scoreTag = withScore ? (
         <Tooltip
-            title='Consensus score'
+            title={t('objectDetails.consensusScore')}
             align={{
                 ...baseTooltipAlign,
                 targetOffset: ['25%', '40%'],
@@ -97,7 +99,7 @@ function ItemAttributesComponent(props: Props): JSX.Element | null {
     ) : null;
     const votesTag = withVotes ? (
         <Tooltip
-            title='Number of votes'
+            title={t('objectDetails.numberOfVotes')}
             align={{
                 ...baseTooltipAlign,
                 targetOffset: ['40%', '40%'],

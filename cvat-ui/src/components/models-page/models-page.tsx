@@ -8,6 +8,7 @@ import React, { useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import dayjs from 'dayjs';
+import { useTranslation } from 'react-i18next';
 import { getModelsAsync } from 'actions/models-actions';
 import { updateHistoryFromQuery } from 'components/resource-sorting-filtering';
 import Spin from 'antd/lib/spin';
@@ -32,6 +33,7 @@ function setUpModelsList(models: MLModel[], newPage: number, pageSize: number): 
 function ModelsPageComponent(): JSX.Element {
     const history = useHistory();
     const dispatch = useDispatch();
+    const { t } = useTranslation('models');
     const {
         fetching,
         query,
@@ -74,8 +76,8 @@ function ModelsPageComponent(): JSX.Element {
         dispatch(getModelsAsync(updatedQuery));
         if (pageOutOfBounds) {
             notification.error({
-                message: 'Could not fetch models',
-                description: 'Invalid page',
+                message: t('errors.couldNotFetchModels'),
+                description: t('errors.invalidPage'),
             });
         }
     }, []);

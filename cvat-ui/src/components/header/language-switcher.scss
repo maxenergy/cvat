@@ -1,0 +1,13 @@
+// Copyright (C) 2025 CVAT.ai Corporation
+//
+// SPDX-License-Identifier: MIT
+
+@import 'base';
+
+.cvat-language-switcher-button {
+    &.cvat-header-button {
+        display: flex;
+        align-items: center;
+        gap: $grid-unit-size;
+    }
+}

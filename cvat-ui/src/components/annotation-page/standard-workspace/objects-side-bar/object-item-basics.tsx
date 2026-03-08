@@ -8,6 +8,7 @@ import { Row, Col } from 'antd/lib/grid';
 import { MoreOutlined } from '@ant-design/icons';
 import Dropdown from 'antd/lib/dropdown';
 import Text from 'antd/lib/typography/Text';
+import { useTranslation } from 'react-i18next';
 
 import { ColorBy } from 'reducers';
 import CVATTooltip from 'components/common/cvat-tooltip';
@@ -100,6 +101,7 @@ function ItemTopComponent(props: Props): JSX.Element {
     } = props;
 
     const [colorPickerVisible, setColorPickerVisible] = useState(false);
+    const { t } = useTranslation('annotations');
 
     return (
         <Row align='middle'>
@@ -116,7 +118,7 @@ function ItemTopComponent(props: Props): JSX.Element {
                 </Text>
             </Col>
             <Col span={12}>
-                <CVATTooltip title='Change current label'>
+                <CVATTooltip title={t('objectMenu.changeLabel')}>
                     <LabelSelector
                         disabled={locked || shapeType === ShapeType.SKELETON}
                         size='small'

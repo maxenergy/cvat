@@ -1,0 +1,206 @@
+{
+    "menu": {
+        "title": "Menu",
+        "uploadAnnotations": "Upload annotations",
+        "exportJobDataset": "Export job dataset",
+        "removeAnnotations": "Remove annotations",
+        "runActions": "Run actions",
+        "openTask": "Open the task",
+        "changeJobState": "Change job state",
+        "finishJob": "Finish the job"
+    },
+    "save": {
+        "button": "Save",
+        "saving": "Saving...",
+        "tooltip": "Save current changes"
+    },
+    "toolbar": {
+        "undo": "Undo",
+        "redo": "Redo",
+        "done": "Done",
+        "block": "Block",
+        "fullscreen": "Fullscreen",
+        "guide": "Guide",
+        "info": "Info",
+        "filters": "Filters"
+    },
+    "player": {
+        "play": "Play",
+        "pause": "Pause",
+        "goToFirstFrame": "Go to the first frame",
+        "goToLastFrame": "Go to the last frame",
+        "goBack": "Go back",
+        "goNext": "Go next",
+        "goBackFiltered": "Go back with a filter",
+        "goNextFiltered": "Go next with a filter",
+        "goBackEmpty": "Go back to an empty frame",
+        "goNextEmpty": "Go next to an empty frame",
+        "goBackChapter": "Go to the previous chapter",
+        "goNextChapter": "Go to the next chapter",
+        "goBackStep": "Go back with a step",
+        "goNextStep": "Go next with a step"
+    },
+    "messages": {
+        "savingAnnotations": "CVAT is saving your annotations, please wait",
+        "jobFinished": "You tagged the job as completed",
+        "jobStateUpdated": "Job state updated",
+        "guideError": "Could not receive annotation guide"
+    },
+    "modals": {
+        "changeJobState": {
+            "title": "Would you like to update current job state?",
+            "content": "Job state will be switched to \"{{state}}\"",
+            "okText": "Continue",
+            "cancelText": "Cancel"
+        },
+        "finishJob": {
+            "title": "Would you like to finish the job?",
+            "content": "It will save annotations and set the job state to \"completed\"",
+            "okText": "Continue",
+            "cancelText": "Cancel"
+        },
+        "removeAnnotations": {
+            "title": "Remove Annotations",
+            "warning": "You are going to remove the annotations from the client.",
+            "serverNote": "It will stay on the server till you save the job. Continue?",
+            "selectRange": "Select Range",
+            "from": "From:",
+            "to": "To:",
+            "deleteKeyframes": "Delete only keyframes for tracks",
+            "keyframesNote": "Applicable only for annotations in range",
+            "okText": "Delete"
+        },
+        "propagate": {
+            "title": "Confirm propagation",
+            "okText": "Yes",
+            "cancelText": "Cancel",
+            "specifyDirection": "Please, specify a direction",
+            "howManyCopies": "How many copies do you want to create?",
+            "specifyRange": "Or specify a range where copies will be created",
+            "from": "FROM",
+            "to": "TO"
+        },
+        "removeObject": {
+            "title": "Remove object",
+            "titleLocked": "Object is locked",
+            "okText": "Yes",
+            "cancelText": "Cancel",
+            "confirmMessage": "Are you sure you want to remove it?",
+            "trackWarning": "The object you are trying to remove is a track. If you continue, it removes many drawn objects on different frames. If you want to hide it only on this frame, use the outside feature instead."
+        }
+    },
+    "tooltips": {
+        "undoAction": "Undo: {{action}} {{shortcut}}",
+        "redoAction": "Redo: {{action}} {{shortcut}}",
+        "finishDraw": "Press \"{{shortcut}}\" to finish",
+        "blockTool": "Press \"{{shortcut}}\" to postpone running the algorithm"
+    },
+    "shortcuts": {
+        "saveJob": {
+            "name": "Save the job",
+            "description": "Submit unsaved changes of annotations to the server"
+        },
+        "undoAction": {
+            "name": "Undo action",
+            "description": "Cancel the latest action related with objects"
+        },
+        "redoAction": {
+            "name": "Redo action",
+            "description": "Cancel undo action"
+        },
+        "switchToolsBlocker": {
+            "name": "Switch algorithm blocker",
+            "description": "Postpone running the algorithm for interaction tools"
+        },
+        "nextFrame": {
+            "name": "Next frame",
+            "description": "Go to the next frame"
+        },
+        "prevFrame": {
+            "name": "Previous frame",
+            "description": "Go to the previous frame"
+        },
+        "forwardFrame": {
+            "name": "Forward frame",
+            "description": "Go forward with a step"
+        },
+        "backwardFrame": {
+            "name": "Backward frame",
+            "description": "Go backward with a step"
+        },
+        "searchForward": {
+            "name": "Search forward",
+            "description": "Search the next frame that satisfies to the filters"
+        },
+        "searchBackward": {
+            "name": "Search backward",
+            "description": "Search the previous frame that satisfies to the filters"
+        },
+        "chapterBackward": {
+            "name": "Chapter backward",
+            "description": "Go to the previous chapter"
+        },
+        "chapterForward": {
+            "name": "Chapter forward",
+            "description": "Go to the next chapter"
+        },
+        "playPause": {
+            "name": "Play/pause",
+            "description": "Start/stop automatic changing frames"
+        }
+    },
+    "sidebar": {
+        "tabs": {
+            "objects": "Objects",
+            "labels": "Labels",
+            "issues": "Issues"
+        },
+        "show": "Show",
+        "hide": "Hide",
+        "expandCollapseAll": "Expand/collapse all",
+        "showGroundTruth": "Show Ground truth annotations and conflicts"
+    },
+    "objectsList": {
+        "itemsCount": "Items: {{count}}",
+        "switchLockAll": "Switch lock property for all {{shortcut}}",
+        "switchHiddenAll": "Switch hidden property for all {{shortcut}}",
+        "defaultLabelChanged": "Default label has been changed to \"{{name}}\""
+    },
+    "objectButtons": {
+        "goToPrevKeyframe": "Go to previous keyframe {{shortcut}}",
+        "goToNextKeyframe": "Go to next keyframe {{shortcut}}",
+        "switchLock": "Switch lock property {{shortcut}}",
+        "switchOccluded": "Switch occluded property {{shortcut}}",
+        "switchPinned": "Switch pinned property {{shortcut}}",
+        "switchHidden": "Switch hidden property {{shortcut}}",
+        "switchOutside": "Switch outside property {{shortcut}}",
+        "switchKeyframe": "Switch keyframe property {{shortcut}}"
+    },
+    "objectMenu": {
+        "changeLabel": "Change current label",
+        "copyPaste": "{{copyShortcut}} and {{pasteShortcut}}",
+        "editShape": "Shift + Double click",
+        "sliceShape": "Cut the shape into two parts {{shortcut}}",
+        "propagate": "{{shortcut}}",
+        "toBackground": "{{shortcut}}",
+        "toForeground": "{{shortcut}}",
+        "toOneLayerBackward": "{{shortcut}}",
+        "toOneLayerForward": "{{shortcut}}",
+        "changeColor": "{{shortcut}}",
+        "remove": "{{shortcut}}",
+        "runAction": "{{shortcut}}"
+    },
+    "objectDetails": {
+        "consensusScore": "Consensus score",
+        "numberOfVotes": "Number of votes"
+    },
+    "issuesList": {
+        "findPrevFrame": "Find the previous frame with issues",
+        "findNextFrame": "Find the next frame with issues",
+        "showHideAll": "Show/hide all issues",
+        "showHideResolved": "Show/hide resolved issues"
+    },
+    "colorPicker": {
+        "close": "Close"
+    }
+}

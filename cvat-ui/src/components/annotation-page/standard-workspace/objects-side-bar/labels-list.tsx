@@ -6,6 +6,7 @@
 import React, { useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import message from 'antd/lib/message';
+import { useTranslation } from 'react-i18next';
 
 import { LabelType, ObjectType, ShapeType } from 'cvat-core-wrapper';
 import { CombinedState } from 'reducers';
@@ -37,6 +38,7 @@ registerComponentShortcuts(componentShortcuts);
 
 function LabelsListComponent(): JSX.Element {
     const dispatch = useDispatch();
+    const { t } = useTranslation('annotations');
 
     const { labels, keyMap } = useSelector((state: CombinedState) => ({
         labels: state.annotation.job.labels,
@@ -108,7 +110,7 @@ function LabelsListComponent(): JSX.Element {
                 }
 
                 message.destroy();
-                message.success(`Default label has been changed to "${label.name}"`);
+                message.success(t('objectsList.defaultLabelChanged', { name: label.name }));
             }
         }
     };
@@ -125,7 +127,7 @@ function LabelsListComponent(): JSX.Element {
         <div className='cvat-objects-sidebar-labels-list'>
             <GlobalHotKeys keyMap={subKeyMap(componentShortcuts, keyMap)} handlers={handlers} />
             <div className='cvat-objects-sidebar-labels-list-header'>
-                <Text>{`Items: ${labels.length}`}</Text>
+                <Text>{t('objectsList.itemsCount', { count: labels.length })}</Text>
             </div>
             {labelIDs.map(
                 (labelID: number): JSX.Element => (

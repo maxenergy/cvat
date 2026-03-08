@@ -11,6 +11,7 @@ import {
 import Button from 'antd/lib/button';
 import Popover from 'antd/lib/popover';
 import Radio from 'antd/lib/radio';
+import { useTranslation } from 'react-i18next';
 
 import CVATTooltip from 'components/common/cvat-tooltip';
 
@@ -27,13 +28,14 @@ const ANCHOR_KEYWORD = '__anchor__';
 
 const SortableItem = SortableElement(
     ({
-        value, appliedSorting, setAppliedSorting, valueIndex, anchorIndex,
+        value, appliedSorting, setAppliedSorting, valueIndex, anchorIndex, t,
     }: {
         value: string;
         valueIndex: number;
         anchorIndex: number;
         appliedSorting: Record<string, string>;
         setAppliedSorting: (arg: Record<string, string>) => void;
+        t: (key: string) => string;
     }): JSX.Element => {
         const isActiveField = value in appliedSorting;
         const isAscendingField = isActiveField && !appliedSorting[value]?.startsWith('-');
@@ -56,7 +58,7 @@ const SortableItem = SortableElement(
             <div className='cvat-sorting-field'>
                 <Radio.Button disabled={valueIndex > anchorIndex}>{value}</Radio.Button>
                 <div>
-                    <CVATTooltip overlay={appliedSorting[value]?.startsWith('-') ? 'Descending sort' : 'Ascending sort'}>
+                    <CVATTooltip overlay={appliedSorting[value]?.startsWith('-') ? t('sorting.descendingSort') : t('sorting.ascendingSort')}>
                         <Button className='cvat-switch-sort-order-button' type='text' disabled={!isActiveField} onClick={onClick}>
                             {
                                 isDescendingField ? (
@@ -74,11 +76,12 @@ const SortableItem = SortableElement(
 );
 
 const SortableList = SortableContainer(
-    ({ items, appliedSorting, setAppliedSorting } :
+    ({ items, appliedSorting, setAppliedSorting, t } :
     {
         items: string[];
         appliedSorting: Record<string, string>;
         setAppliedSorting: (arg: Record<string, string>) => void;
+        t: (key: string) => string;
     }) => (
         <div className='cvat-resource-page-sorting-list'>
             { items.map((value: string, index: number) => (
@@ -90,6 +93,7 @@ const SortableList = SortableContainer(
                     value={value}
                     valueIndex={index}
                     anchorIndex={items.indexOf(ANCHOR_KEYWORD)}
+                    t={t}
                 />
             )) }
         </div>
@@ -101,6 +105,7 @@ function SortingModalComponent(props: Props): JSX.Element {
         sortingFields: sortingFieldsProp,
         defaultFields, visible, onApplySorting, onVisibleChange, disabled,
     } = props;
+    const { t } = useTranslation('common');
     const [appliedSorting, setAppliedSorting] = useState<Record<string, string>>(
         defaultFields.reduce((acc: Record<string, string>, field: string) => {
             const [isAscending, absField] = field.startsWith('-') ?
@@ -193,6 +198,7 @@ function SortingModalComponent(props: Props): JSX.Element {
                     items={sortingFields}
                     appliedSorting={appliedSorting}
                     setAppliedSorting={setAppliedSorting}
+                    t={t}
                 />
             )}
         >
@@ -202,7 +208,7 @@ function SortingModalComponent(props: Props): JSX.Element {
                 type='default'
                 onClick={() => onVisibleChange(!visible)}
             >
-                Sort by
+                {t('sorting.sortBy')}
                 <OrderedListOutlined />
             </Button>
         </Popover>

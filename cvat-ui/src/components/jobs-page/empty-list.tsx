@@ -7,6 +7,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Text from 'antd/lib/typography/Text';
 import { Row, Col } from 'antd/lib/grid';
+import { useTranslation } from 'react-i18next';
 
 import Empty from 'antd/lib/empty';
 
@@ -16,27 +17,28 @@ interface Props {
 
 function EmptyListComponent(props: Props): JSX.Element {
     const { notFound } = props;
+    const { t } = useTranslation('jobs');
 
     return (
         <div className='cvat-empty-jobs-list'>
             <Empty description={notFound ?
-                (<Text strong>No results matched your search...</Text>) : (
+                (<Text strong>{t('emptyList.noResultsMatched')}</Text>) : (
                     <>
                         <Row justify='center' align='middle'>
                             <Col>
-                                <Text strong>No jobs created yet...</Text>
+                                <Text strong>{t('emptyList.noJobsCreated')}</Text>
                             </Col>
                         </Row>
                         <Row justify='center' align='middle'>
                             <Col>
-                                <Text type='secondary'>To get started with your annotation project</Text>
+                                <Text type='secondary'>{t('emptyList.getStarted')}</Text>
                             </Col>
                         </Row>
                         <Row justify='center' align='middle'>
                             <Col>
-                                <Link to='/tasks/create'>create a new task</Link>
-                                <Text type='secondary'> or try to </Text>
-                                <Link to='/projects/create'>create a new project</Link>
+                                <Link to='/tasks/create'>{t('emptyList.createNewTask')}</Link>
+                                <Text type='secondary'>{t('emptyList.orTryTo')}</Text>
+                                <Link to='/projects/create'>{t('emptyList.createNewProject')}</Link>
                             </Col>
                         </Row>
                     </>

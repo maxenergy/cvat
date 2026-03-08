@@ -1,0 +1,205 @@
+{
+    "topBar": {
+        "searchPlaceholder": "搜索 ...",
+        "createNewTask": "创建新任务",
+        "createMultiTasks": "创建多个任务",
+        "createFromBackup": "从备份创建",
+        "exportToCSV": "导出任务到 CSV"
+    },
+    "emptyList": {
+        "noResultsMatched": "没有匹配您搜索的结果...",
+        "noTasksCreated": "尚未创建任务...",
+        "getStarted": "要开始您的标注项目",
+        "createNewTask": "创建新任务",
+        "orTryTo": " 或尝试 ",
+        "createNewProject": "创建新项目"
+    },
+    "taskItem": {
+        "open": "打开",
+        "actions": "操作",
+        "createdBy": "由 {{owner}} 创建于 {{date}}",
+        "createdOn": "创建于 {{date}}",
+        "lastUpdated": "最后更新 {{time}}",
+        "requestProgress": "请求当前进度",
+        "done": "已完成",
+        "onReview": "审核中",
+        "annotating": "标注中",
+        "total": "总计"
+    },
+    "actions": {
+        "uploadAnnotations": "上传标注",
+        "exportTaskDataset": "导出任务数据集",
+        "openBugTracker": "打开问题跟踪器",
+        "automaticAnnotation": "自动标注",
+        "backupTask": "备份任务",
+        "assignee": "分配给",
+        "viewAnalytics": "查看分析",
+        "qualityControl": "质量控制",
+        "consensusManagement": "共识管理",
+        "mergeConsensusJobs": "合并共识作业",
+        "moveToProject": "移动到项目",
+        "organization": "组织",
+        "delete": "删除"
+    },
+    "confirmations": {
+        "mergeConsensusTitle": "共识作业将被合并",
+        "mergeConsensusContent": "父作业中的现有标注将被更新。是否继续？",
+        "mergeConsensusOk": "合并",
+        "deleteTaskTitle": "任务 {{id}} 将被删除",
+        "deleteBulkTasksTitle": "删除 {{count}} 个选中的任务",
+        "deleteTaskContent": "所有相关数据（图像、标注）将丢失。是否继续？",
+        "deleteBulkTasksContent": "所有选中任务的相关数据（图像、标注）将丢失。是否继续？",
+        "deleteOk": "删除",
+        "deleteSelectedOk": "删除选中项"
+    },
+    "bulkOperations": {
+        "updatingAssignee": "正在更新任务 #{{id}} 的分配者 ({{current}}/{{total}})",
+        "deletingTask": "正在删除任务 #{{id}} ({{current}}/{{total}})",
+        "updatingOrganization": "正在更新任务 #{{id}} 的组织 ({{current}}/{{total}})"
+    },
+    "csvExport": {
+        "id": "ID",
+        "name": "名称",
+        "taskUrl": "任务 URL",
+        "projectId": "项目 ID",
+        "projectName": "项目名称",
+        "projectUrl": "项目 URL",
+        "owner": "所有者",
+        "assignee": "分配给",
+        "status": "状态",
+        "mode": "模式",
+        "size": "大小",
+        "subset": "子集",
+        "createdDate": "创建日期",
+        "updatedDate": "更新日期",
+        "bugTracker": "问题跟踪器"
+    },
+    "createTask": {
+        "pageTitle": "创建新任务",
+        "basicConfiguration": "基本配置",
+        "advancedConfiguration": "高级配置",
+        "quality": "质量",
+        "name": "名称",
+        "project": "项目",
+        "subset": "子集",
+        "labels": "标签",
+        "projectLabelsWillBeUsed": "将使用项目标签",
+        "selectFiles": "选择文件",
+        "submitAndOpen": "提交并打开",
+        "submitAndContinue": "提交并继续",
+        "submitTasks": "提交 {{count}} 个任务",
+        "nameTemplate": {
+            "tooltip": "在形成名称时，使用模板。",
+            "youCanUse": "您可以在模板中使用：",
+            "someText": "some_text - 任意文本",
+            "index": "{{index}} - 集合中的文件索引",
+            "fileName": "{{file_name}} - 文件名称",
+            "example": "示例："
+        },
+        "sortingMethod": {
+            "label": "排序方法",
+            "help": "指定如何对图像进行排序。对视频不相关。",
+            "lexicographical": "字典序",
+            "natural": "自然序",
+            "predefined": "预定义",
+            "random": "随机"
+        },
+        "copyData": {
+            "label": "将数据复制到 CVAT",
+            "help": "如果您的网络数据传输速率较低，可以将数据复制到 CVAT 以加快工作速度"
+        },
+        "imageQuality": {
+            "label": "图像质量",
+            "tooltip": "定义图像压缩级别"
+        },
+        "overlapSize": {
+            "label": "重叠大小",
+            "tooltip": "定义不同段之间相交帧的数量"
+        },
+        "segmentSize": {
+            "label": "段大小",
+            "tooltip": "定义段中的帧数"
+        },
+        "startFrame": {
+            "label": "起始帧"
+        },
+        "stopFrame": {
+            "label": "结束帧"
+        },
+        "frameStep": {
+            "label": "帧步长"
+        },
+        "bugTracker": {
+            "label": "问题跟踪器",
+            "extra": "附加描述任务的问题跟踪器"
+        },
+        "useZipChunks": {
+            "label": "优先使用 zip 块",
+            "tooltip": "ZIP 块具有更好的质量，但需要更多磁盘空间和下载时间。仅与视频相关"
+        },
+        "useCache": {
+            "label": "使用缓存",
+            "tooltip": "使用缓存存储数据。"
+        },
+        "chunkSize": {
+            "label": "块大小",
+            "tooltip": "定义从客户端发送到服务器时打包在块中的帧数。如果为空，服务器会自动定义。\n推荐值：\n1080p 或更低：36\n2k 或更低：8 - 16\n4k 或更低：4 - 8\n更高：1 - 4"
+        },
+        "consensusReplicas": {
+            "label": "共识副本"
+        },
+        "sourceStorage": {
+            "switchDescription": "使用项目源存储",
+            "storageDescription": "指定用于导入资源（如标注、备份）的源存储"
+        },
+        "targetStorage": {
+            "switchDescription": "使用项目目标存储",
+            "storageDescription": "指定用于导出资源（如标注、备份）的目标存储"
+        },
+        "validationMode": {
+            "label": "验证模式",
+            "none": "无",
+            "groundTruth": "真实标注",
+            "honeypots": "蜜罐"
+        },
+        "frameSelectionMethod": {
+            "label": "帧选择方法",
+            "random": "随机",
+            "randomPerJob": "每个作业随机"
+        },
+        "quantity": {
+            "label": "数量"
+        },
+        "quantityPerJob": {
+            "label": "每个作业的数量"
+        },
+        "totalHoneypots": {
+            "label": "总蜜罐数"
+        },
+        "overheadPerJob": {
+            "label": "每个作业的开销"
+        },
+        "notifications": {
+            "couldNotCreate": "无法创建任务",
+            "taskCreated": "任务已创建",
+            "tasksCreated": "任务已创建",
+            "tasksCreatedSummary": "已完成：{{completed}}，失败：{{failed}}，已取消：{{cancelled}}，总计：{{total}}",
+            "tasksCancelled": "已取消创建 {{count}} 个任务",
+            "atLeastOneFile": "任务必须至少包含一个文件",
+            "sortingMethodUpdated": "任务参数已自动更新",
+            "sortingMethodUpdatedDescription": "排序方法已更新，因为蜜罐质量方法仅支持随机排序",
+            "couldNotFetchProject": "无法获取项目 {{projectId}}"
+        },
+        "fileErrors": {
+            "wrongListSingle": "文件列表错误。您可以上传包含图像的存档、视频、PDF 文件或多个图像。",
+            "wrongListMulti": "文件列表错误。您可以上传一个或多个视频。",
+            "unsupportedTypes": "发现不支持的类型：{{types}}。"
+        }
+    },
+    "taskDetails": {
+        "taskId": "任务 #{{id}}",
+        "createdBy": "由 {{owner}} 创建于 {{created}}",
+        "assignedTo": "分配给",
+        "subset": "子集："
+    }
+}

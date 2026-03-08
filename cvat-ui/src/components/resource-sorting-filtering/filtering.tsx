@@ -17,6 +17,7 @@ import Button from 'antd/lib/button';
 import Checkbox, { CheckboxChangeEvent } from 'antd/lib/checkbox/Checkbox';
 import Menu from 'antd/lib/menu';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { CombinedState } from 'reducers';
 import { User } from 'cvat-core-wrapper';
 
@@ -137,6 +138,7 @@ export default function ResourceFilterHOC(
             disabled,
         } = props;
 
+        const { t } = useTranslation('common');
         const user = useSelector((state: CombinedState) => state.auth.user);
         const [isMounted, setIsMounted] = useState<boolean>(false);
         const [recentFilters, setRecentFilters] = useState<Record<string, string>>({});
@@ -271,7 +273,7 @@ export default function ResourceFilterHOC(
                                 type='default'
                                 onClick={() => onPredefinedVisibleChange(!predefinedVisible)}
                             >
-                                Quick filters
+                                {t('filtering.quickFilters')}
                                 { appliedFilter.predefined ?
                                     <FilterFilled /> :
                                     <FilterOutlined />}
@@ -332,7 +334,7 @@ export default function ResourceFilterHOC(
                                             () => onRecentVisibleChange(!recentVisible)
                                         }
                                     >
-                                        Recent
+                                        {t('filtering.recent')}
                                         <DownOutlined />
                                     </Button>
                                 </Popover>
@@ -360,7 +362,7 @@ export default function ResourceFilterHOC(
                                         });
                                     }}
                                 >
-                                    Reset
+                                    {t('filtering.reset')}
                                 </Button>
                                 <Button
                                     className='cvat-apply-filters-button'
@@ -379,7 +381,7 @@ export default function ResourceFilterHOC(
                                         });
                                     }}
                                 >
-                                    Apply
+                                    {t('filtering.apply')}
                                 </Button>
                             </Space>
                         </div>
@@ -391,7 +393,7 @@ export default function ResourceFilterHOC(
                         type='default'
                         onClick={() => onBuilderVisibleChange(!builderVisible)}
                     >
-                        Filter
+                        {t('filtering.filter')}
                         { appliedFilter.built || appliedFilter.recent ?
                             <FilterFilled /> :
                             <FilterOutlined />}
@@ -404,7 +406,7 @@ export default function ResourceFilterHOC(
                     type='link'
                     onClick={() => { setAppliedFilter({ ...defaultAppliedFilter }); }}
                 >
-                    Clear filters
+                    {t('filtering.clearFilters')}
                 </Button>
             </div>
         );

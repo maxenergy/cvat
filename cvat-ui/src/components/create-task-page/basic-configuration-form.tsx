@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import React, { RefObject } from 'react';
+import { useTranslation } from 'react-i18next';
 import Input from 'antd/lib/input';
 import Text from 'antd/lib/typography/Text';
 import Tooltip from 'antd/lib/tooltip';
@@ -20,7 +21,7 @@ interface Props {
     exampleMultiTaskName?: string;
 }
 
-export default class BasicConfigurationForm extends React.PureComponent<Props> {
+class BasicConfigurationFormComponent extends React.PureComponent<Props & { t: any }> {
     private formRef: RefObject<FormInstance>;
     private inputRef: RefObject<Input>;
     private initialName: string;
@@ -69,7 +70,7 @@ export default class BasicConfigurationForm extends React.PureComponent<Props> {
     }
 
     public render(): JSX.Element {
-        const { many, exampleMultiTaskName } = this.props;
+        const { many, exampleMultiTaskName, t } = this.props;
 
         return (
             <Form ref={this.formRef} layout='vertical'>
@@ -77,11 +78,11 @@ export default class BasicConfigurationForm extends React.PureComponent<Props> {
                     className={many ? 'cvat-task-name-field-has-tooltip' : ''}
                     hasFeedback
                     name='name'
-                    label={<span>Name</span>}
+                    label={<span>{t('tasks:createTask.name')}</span>}
                     rules={[
                         {
                             required: true,
-                            message: 'Task name cannot be empty',
+                            message: t('validation:taskNameEmpty'),
                         },
                     ]}
                     initialValue={this.initialName}
@@ -95,32 +96,32 @@ export default class BasicConfigurationForm extends React.PureComponent<Props> {
                     <Text type='secondary'>
                         <Tooltip title={() => (
                             <>
-                                You can use in the template:
+                                {t('tasks:createTask.nameTemplate.youCanUse')}
                                 <ul>
                                     <li>
-                                        some_text - any text
+                                        {t('tasks:createTask.nameTemplate.someText')}
                                     </li>
                                     <li>
                                         {'{{'}
                                         index
                                         {'}}'}
-                                        &nbsp;- index file in set
+                                        &nbsp;- {t('tasks:createTask.nameTemplate.index')}
                                     </li>
                                     <li>
                                         {'{{'}
                                         file_name
                                         {'}}'}
-                                        &nbsp;- name of file
+                                        &nbsp;- {t('tasks:createTask.nameTemplate.fileName')}
                                     </li>
                                 </ul>
-                                Example:&nbsp;
+                                {t('tasks:createTask.nameTemplate.example')}&nbsp;
                                 <i>
                                     {exampleMultiTaskName || 'Task name 1 - video_1.mp4'}
                                 </i>
                             </>
                         )}
                         >
-                            When forming the name, a template is used.
+                            {t('tasks:createTask.nameTemplate.tooltip')}
                             {' '}
                             <QuestionCircleOutlined />
                         </Tooltip>
@@ -129,4 +130,9 @@ export default class BasicConfigurationForm extends React.PureComponent<Props> {
             </Form>
         );
     }
+}
+
+export default function BasicConfigurationForm(props: Props): JSX.Element {
+    const { t } = useTranslation(['tasks', 'validation']);
+    return <BasicConfigurationFormComponent {...props} t={t} />;
 }

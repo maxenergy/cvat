@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Modal from 'antd/lib/modal';
 import notification from 'antd/lib/notification';
+import { useTranslation } from 'react-i18next';
 
 import { ThunkDispatch } from 'utils/redux';
 import { modelsActions, startInferenceAsync } from 'actions/models-actions';
@@ -61,6 +62,7 @@ function ModelRunnerDialog(props: StateToProps & DispatchToProps): JSX.Element {
 
     const models = [...reid, ...detectors];
     const [taskInstance, setTaskInstance] = useState<Task | null>(null);
+    const { t } = useTranslation('models');
 
     useEffect(() => {
         if (task) {
@@ -69,10 +71,13 @@ function ModelRunnerDialog(props: StateToProps & DispatchToProps): JSX.Element {
                     setTaskInstance(_task);
                 }
             }).catch((error: any) => {
-                notification.error({ message: 'Could not get task details', description: error.toString() });
+                notification.error({
+                    message: t('notifications.couldNotGetTaskDetails'),
+                    description: error.toString()
+                });
             });
         }
-    }, [visible, task]);
+    }, [visible, task, t]);
 
     return (
         <Modal
@@ -81,7 +86,7 @@ function ModelRunnerDialog(props: StateToProps & DispatchToProps): JSX.Element {
             footer={[]}
             onCancel={(): void => closeDialog()}
             maskClosable
-            title='Automatic annotation'
+            title={t('modelRunner.title')}
         >
             { taskInstance ? (
                 <DetectorRunner

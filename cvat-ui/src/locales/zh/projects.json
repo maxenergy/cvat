@@ -1,0 +1,56 @@
+{
+    "topBar": {
+        "searchPlaceholder": "搜索 ...",
+        "createNewProject": "创建新项目",
+        "createFromBackup": "从备份创建"
+    },
+    "emptyList": {
+        "noResultsMatched": "没有匹配您搜索的结果...",
+        "noProjectsCreated": "尚未创建项目...",
+        "getStarted": "要开始您的标注项目",
+        "createNewOne": "创建新项目"
+    },
+    "actions": {
+        "exportDataset": "导出数据集",
+        "importDataset": "导入数据集",
+        "backupProject": "备份项目",
+        "assignee": "分配给",
+        "viewAnalytics": "查看分析",
+        "qualityControl": "质量控制",
+        "setupWebhooks": "设置 Webhooks",
+        "organization": "组织",
+        "delete": "删除"
+    },
+    "confirmations": {
+        "deleteProjectTitle": "项目 {{id}} 将被删除",
+        "deleteBulkProjectsTitle": "删除 {{count}} 个选中的项目",
+        "deleteProjectContent": "所有相关数据（任务、标注）将丢失。是否继续？",
+        "deleteBulkProjectsContent": "所有选中项目的相关数据（任务、标注）将丢失。是否继续？",
+        "deleteOk": "删除",
+        "deleteSelectedOk": "删除选中项"
+    },
+    "bulkOperations": {
+        "updatingAssignee": "正在更新项目 #{{id}} 的分配者 ({{current}}/{{total}})",
+        "deletingProject": "正在删除项目 #{{id}} ({{current}}/{{total}})",
+        "updatingOrganization": "正在更新项目 #{{id}} 的组织 ({{current}}/{{total}})"
+    },
+    "details": {
+        "projectCreated": "项目 #{{id}} 已创建",
+        "createdBy": "由 {{username}} 创建",
+        "createdOn": "于 {{date}}",
+        "assignedTo": "分配给"
+    },
+    "create": {
+        "title": "创建新项目",
+        "nameLabel": "名称",
+        "labelsLabel": "标签：",
+        "issueTrackerLabel": "问题跟踪器",
+        "issueTrackerExtra": "附加项目描述所在的问题跟踪器",
+        "advancedConfiguration": "高级配置",
+        "sourceStorageDescription": "指定用于导入资源（如标注、备份）的源存储",
+        "targetStorageDescription": "指定用于导出资源（如标注、备份）的目标存储",
+        "submitAndOpen": "提交并打开",
+        "submitAndContinue": "提交并继续",
+        "successNotification": "项目已创建"
+    }
+}

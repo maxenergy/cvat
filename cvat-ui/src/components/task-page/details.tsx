@@ -6,6 +6,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import dayjs from 'dayjs';
+import { useTranslation } from 'react-i18next';
 
 import { Row, Col } from 'antd/lib/grid';
 import Text from 'antd/lib/typography/Text';
@@ -32,6 +33,7 @@ interface OwnProps {
     taskMeta: FramesMetaData;
     cloudStorageInstance: CloudStorage | null;
     onUpdateTaskMeta: (meta: FramesMetaData) => Promise<void>;
+    t: (key: string, options?: any) => string;
 }
 
 interface StateToProps {
@@ -126,6 +128,7 @@ class DetailsComponent extends React.PureComponent<Props, State> {
             taskMeta,
             cloudStorageInstance,
             onUpdateTaskMeta,
+            t,
         } = this.props;
         const { consensusEnabled } = this.state;
         const owner = taskInstance.owner ? taskInstance.owner.username : null;
@@ -149,14 +152,14 @@ class DetailsComponent extends React.PureComponent<Props, State> {
                         {owner && (
                             <div>
                                 <Text type='secondary'>
-                                    {`Task #${taskInstance.id} Created by ${owner} on ${created}`}
+                                    {t('taskDetails.createdBy', { owner, created })}
                                 </Text>
                             </div>
                         )}
                         {consensusEnabled && <CVATTag type={TagType.CONSENSUS} />}
                     </Col>
                     <Col>
-                        <Text type='secondary'>Assigned to</Text>
+                        <Text type='secondary'>{t('taskDetails.assignedTo')}</Text>
                         {assigneeSelect}
                     </Col>
                 </Row>
@@ -191,12 +194,12 @@ class DetailsComponent extends React.PureComponent<Props, State> {
 
     private renderSubsetField(): JSX.Element {
         const { subset } = this.state;
-        const { task: taskInstance, project, onUpdateTask } = this.props;
+        const { task: taskInstance, project, onUpdateTask, t } = this.props;
 
         return (
             <Row>
                 <Col span={24}>
-                    <Text className='cvat-text-color'>Subset:</Text>
+                    <Text className='cvat-text-color'>{t('taskDetails.subset')}</Text>
                 </Col>
                 <Col span={24}>
                     <ProjectSubsetField
@@ -272,4 +275,11 @@ class DetailsComponent extends React.PureComponent<Props, State> {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DetailsComponent);
+const ConnectedDetailsComponent = connect(mapStateToProps, mapDispatchToProps)(DetailsComponent);
+
+function DetailsComponentWrapper(props: Omit<OwnProps, 't'>): JSX.Element {
+    const { t } = useTranslation('tasks');
+    return <ConnectedDetailsComponent {...props} t={t} />;
+}
+
+export default DetailsComponentWrapper;

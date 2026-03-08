@@ -14,6 +14,7 @@ import Icon, {
 } from '@ant-design/icons';
 import { Col, Row } from 'antd/lib/grid';
 import Text from 'antd/lib/typography/Text';
+import { useTranslation } from 'react-i18next';
 
 import StatesOrderingSelector from 'components/annotation-page/standard-workspace/objects-side-bar/states-ordering-selector';
 import CVATTooltip from 'components/common/cvat-tooltip';
@@ -44,9 +45,10 @@ function LockAllSwitcher(props: Props): JSX.Element {
     const {
         statesLocked, switchLockAllShortcut, unlockAllStates, lockAllStates,
     } = props;
+    const { t } = useTranslation('annotations');
     return (
         <Col span={3}>
-            <CVATTooltip title={`Switch lock property for all ${switchLockAllShortcut}`}>
+            <CVATTooltip title={t('objectsList.switchLockAll', { shortcut: switchLockAllShortcut })}>
                 {statesLocked ? <LockFilled onClick={unlockAllStates} /> : <UnlockOutlined onClick={lockAllStates} />}
             </CVATTooltip>
         </Col>
@@ -57,9 +59,10 @@ function HideAllSwitcher(props: Props): JSX.Element {
     const {
         statesHidden, switchHiddenAllShortcut, showAllStates, hideAllStates,
     } = props;
+    const { t } = useTranslation('annotations');
     return (
         <Col span={3}>
-            <CVATTooltip title={`Switch hidden property for all ${switchHiddenAllShortcut}`}>
+            <CVATTooltip title={t('objectsList.switchHiddenAll', { shortcut: switchHiddenAllShortcut })}>
                 {statesHidden ? (
                     <EyeInvisibleFilled onClick={showAllStates} />
                 ) : (
@@ -74,9 +77,10 @@ function GTSwitcher(props: Props): JSX.Element {
     const {
         showGroundTruth, changeShowGroundTruth,
     } = props;
+    const { t } = useTranslation('annotations');
     return (
         <Col span={3}>
-            <CVATTooltip title='Show Ground truth annotations and conflicts'>
+            <CVATTooltip title={t('sidebar.showGroundTruth')}>
                 <Icon
                     className={
                         `cvat-objects-sidebar-show-ground-truth ${showGroundTruth ? 'cvat-objects-sidebar-show-ground-truth-active' : ''}`
@@ -91,9 +95,10 @@ function GTSwitcher(props: Props): JSX.Element {
 
 function CollapseAllSwitcher(props: Props): JSX.Element {
     const { statesCollapsed, expandAllStates, collapseAllStates } = props;
+    const { t } = useTranslation('annotations');
     return (
         <Col span={3}>
-            <CVATTooltip title='Expand/collapse all'>
+            <CVATTooltip title={t('sidebar.expandCollapseAll')}>
                 {statesCollapsed ? (
                     <CaretDownOutlined onClick={expandAllStates} />
                 ) : (
@@ -108,12 +113,13 @@ function ObjectListHeader(props: Props): JSX.Element {
     const {
         workspace, statesOrdering, count, changeStatesOrdering,
     } = props;
+    const { t } = useTranslation('annotations');
 
     return (
         <div className='cvat-objects-sidebar-states-header'>
             <Row justify='space-between' align='middle'>
                 <Col span={24}>
-                    <Text>{`Items: ${count}`}</Text>
+                    <Text>{t('objectsList.itemsCount', { count })}</Text>
                     <StatesOrderingSelector
                         statesOrdering={statesOrdering}
                         changeStatesOrdering={changeStatesOrdering}

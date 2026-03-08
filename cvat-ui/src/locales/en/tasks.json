@@ -1,0 +1,205 @@
+{
+    "topBar": {
+        "searchPlaceholder": "Search ...",
+        "createNewTask": "Create a new task",
+        "createMultiTasks": "Create multi tasks",
+        "createFromBackup": "Create from backup",
+        "exportToCSV": "Export tasks to CSV"
+    },
+    "emptyList": {
+        "noResultsMatched": "No results matched your search...",
+        "noTasksCreated": "No tasks created yet...",
+        "getStarted": "To get started with your annotation project",
+        "createNewTask": "create a new task",
+        "orTryTo": " or try to ",
+        "createNewProject": "create a new project"
+    },
+    "taskItem": {
+        "open": "Open",
+        "actions": "Actions",
+        "createdBy": "Created {{owner}} on {{date}}",
+        "createdOn": "Created on {{date}}",
+        "lastUpdated": "Last updated {{time}}",
+        "requestProgress": "Request current progress",
+        "done": "done",
+        "onReview": "on review",
+        "annotating": "annotating",
+        "total": "total"
+    },
+    "actions": {
+        "uploadAnnotations": "Upload annotations",
+        "exportTaskDataset": "Export task dataset",
+        "openBugTracker": "Open bug tracker",
+        "automaticAnnotation": "Automatic annotation",
+        "backupTask": "Backup Task",
+        "assignee": "Assignee",
+        "viewAnalytics": "View analytics",
+        "qualityControl": "Quality control",
+        "consensusManagement": "Consensus management",
+        "mergeConsensusJobs": "Merge consensus jobs",
+        "moveToProject": "Move to project",
+        "organization": "Organization",
+        "delete": "Delete"
+    },
+    "confirmations": {
+        "mergeConsensusTitle": "The consensus jobs will be merged",
+        "mergeConsensusContent": "Existing annotations in parent jobs will be updated. Continue?",
+        "mergeConsensusOk": "Merge",
+        "deleteTaskTitle": "The task {{id}} will be deleted",
+        "deleteBulkTasksTitle": "Delete {{count}} selected tasks",
+        "deleteTaskContent": "All related data (images, annotations) will be lost. Continue?",
+        "deleteBulkTasksContent": "All related data (images, annotations) for all selected tasks will be lost. Continue?",
+        "deleteOk": "Delete",
+        "deleteSelectedOk": "Delete selected"
+    },
+    "bulkOperations": {
+        "updatingAssignee": "Updating assignee for task #{{id}} ({{current}}/{{total}})",
+        "deletingTask": "Deleting task #{{id}} ({{current}}/{{total}})",
+        "updatingOrganization": "Updating organization for task #{{id}} ({{current}}/{{total}})"
+    },
+    "csvExport": {
+        "id": "ID",
+        "name": "Name",
+        "taskUrl": "Task URL",
+        "projectId": "Project ID",
+        "projectName": "Project Name",
+        "projectUrl": "Project URL",
+        "owner": "Owner",
+        "assignee": "Assignee",
+        "status": "Status",
+        "mode": "Mode",
+        "size": "Size",
+        "subset": "Subset",
+        "createdDate": "Created Date",
+        "updatedDate": "Updated Date",
+        "bugTracker": "Bug Tracker"
+    },
+    "createTask": {
+        "pageTitle": "Create a new task",
+        "basicConfiguration": "Basic configuration",
+        "advancedConfiguration": "Advanced configuration",
+        "quality": "Quality",
+        "name": "Name",
+        "project": "Project",
+        "subset": "Subset",
+        "labels": "Labels",
+        "projectLabelsWillBeUsed": "Project labels will be used",
+        "selectFiles": "Select files",
+        "submitAndOpen": "Submit & Open",
+        "submitAndContinue": "Submit & Continue",
+        "submitTasks": "Submit {{count}} tasks",
+        "nameTemplate": {
+            "tooltip": "When forming the name, a template is used.",
+            "youCanUse": "You can use in the template:",
+            "someText": "some_text - any text",
+            "index": "{{index}} - index file in set",
+            "fileName": "{{file_name}} - name of file",
+            "example": "Example:"
+        },
+        "sortingMethod": {
+            "label": "Sorting method",
+            "help": "Specify how to sort images. It is not relevant for videos.",
+            "lexicographical": "Lexicographical",
+            "natural": "Natural",
+            "predefined": "Predefined",
+            "random": "Random"
+        },
+        "copyData": {
+            "label": "Copy data into CVAT",
+            "help": "If you have a low data transfer rate over the network you can copy data into CVAT to speed up work"
+        },
+        "imageQuality": {
+            "label": "Image quality",
+            "tooltip": "Defines images compression level"
+        },
+        "overlapSize": {
+            "label": "Overlap size",
+            "tooltip": "Defines a number of intersected frames between different segments"
+        },
+        "segmentSize": {
+            "label": "Segment size",
+            "tooltip": "Defines a number of frames in a segment"
+        },
+        "startFrame": {
+            "label": "Start frame"
+        },
+        "stopFrame": {
+            "label": "Stop frame"
+        },
+        "frameStep": {
+            "label": "Frame step"
+        },
+        "bugTracker": {
+            "label": "Issue tracker",
+            "extra": "Attach issue tracker where the task is described"
+        },
+        "useZipChunks": {
+            "label": "Prefer zip chunks",
+            "tooltip": "ZIP chunks have better quality, but they require more disk space and time to download. Relevant for video only"
+        },
+        "useCache": {
+            "label": "Use cache",
+            "tooltip": "Using cache to store data."
+        },
+        "chunkSize": {
+            "label": "Chunk size",
+            "tooltip": "Defines a number of frames to be packed in a chunk when send from client to server. Server defines automatically if empty.\nRecommended values:\n1080p or less: 36\n2k or less: 8 - 16\n4k or less: 4 - 8\nMore: 1 - 4"
+        },
+        "consensusReplicas": {
+            "label": "Consensus Replicas"
+        },
+        "sourceStorage": {
+            "switchDescription": "Use project source storage",
+            "storageDescription": "Specify source storage for import resources like annotation, backups"
+        },
+        "targetStorage": {
+            "switchDescription": "Use project target storage",
+            "storageDescription": "Specify target storage for export resources like annotation, backups"
+        },
+        "validationMode": {
+            "label": "Validation mode",
+            "none": "None",
+            "groundTruth": "Ground Truth",
+            "honeypots": "Honeypots"
+        },
+        "frameSelectionMethod": {
+            "label": "Frame selection method",
+            "random": "Random",
+            "randomPerJob": "Random per job"
+        },
+        "quantity": {
+            "label": "Quantity"
+        },
+        "quantityPerJob": {
+            "label": "Quantity per job"
+        },
+        "totalHoneypots": {
+            "label": "Total honeypots"
+        },
+        "overheadPerJob": {
+            "label": "Overhead per job"
+        },
+        "notifications": {
+            "couldNotCreate": "Could not create a task",
+            "taskCreated": "The task has been created",
+            "tasksCreated": "The tasks have been created",
+            "tasksCreatedSummary": "Completed: {{completed}}, failed: {{failed}}, cancelled: {{cancelled}}, total: {{total}}",
+            "tasksCancelled": "Creation of {{count}} tasks have been canceled",
+            "atLeastOneFile": "A task must contain at least one file",
+            "sortingMethodUpdated": "Task parameters were automatically updated",
+            "sortingMethodUpdatedDescription": "Sorting method has been updated as Honeypots quality method only supports RANDOM sorting",
+            "couldNotFetchProject": "Couldn't fetch the project {{projectId}}"
+        },
+        "fileErrors": {
+            "wrongListSingle": "Wrong list of files. You can upload an archive with images, a video, a pdf file or multiple images. ",
+            "wrongListMulti": "Wrong list of files. You can upload one or more videos. ",
+            "unsupportedTypes": "Found unsupported types: {{types}}. "
+        }
+    },
+    "taskDetails": {
+        "taskId": "Task #{{id}}",
+        "createdBy": "Created by {{owner}} on {{created}}",
+        "assignedTo": "Assigned to",
+        "subset": "Subset:"
+    }
+}

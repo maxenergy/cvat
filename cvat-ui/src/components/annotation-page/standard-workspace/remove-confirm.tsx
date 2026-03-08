@@ -5,6 +5,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { CombinedState } from 'reducers';
 import Text from 'antd/lib/typography/Text';
 import Modal from 'antd/lib/modal';
@@ -14,6 +15,7 @@ import { removeObjectAsync, removeObject as removeObjectAction } from 'actions/a
 import { ObjectType } from 'cvat-core-wrapper';
 
 export default function RemoveConfirmComponent(): JSX.Element | null {
+    const { t } = useTranslation('annotations');
     const dispatch = useDispatch();
     const [visible, setVisible] = useState(false);
     const [title, setTitle] = useState('');
@@ -34,19 +36,14 @@ export default function RemoveConfirmComponent(): JSX.Element | null {
     useEffect(() => {
         const newVisible = (!!objectState && !force && objectState.lock) ||
             (objectState?.objectType === ObjectType.TRACK && !force);
-        setTitle(objectState?.lock ? 'Object is locked' : 'Remove object');
-        let descriptionMessage: string | JSX.Element = 'Are you sure you want to remove it?';
+        setTitle(objectState?.lock ? t('modals.removeObject.titleLocked') : t('modals.removeObject.title'));
+        let descriptionMessage: string | JSX.Element = t('modals.removeObject.confirmMessage');
 
         if (objectState?.objectType === ObjectType.TRACK && !force) {
             descriptionMessage = (
                 <>
                     <Text>
-                        {
-                            `The object you are trying to remove is a track.
-                            If you continue, it removes many drawn objects on different frames.
-                            If you want to hide it only on this frame, use the outside feature instead.
-                            ${descriptionMessage}`
-                        }
+                        {`${t('modals.removeObject.trackWarning')} ${t('modals.removeObject.confirmMessage')}`}
                     </Text>
                     <div className='cvat-remove-object-confirm-wrapper'>
                         {/* eslint-disable-next-line */}
@@ -61,13 +58,13 @@ export default function RemoveConfirmComponent(): JSX.Element | null {
         if (!newVisible && objectState) {
             dispatch(removeObjectAsync(objectState, true));
         }
-    }, [objectState, force]);
+    }, [objectState, force, t]);
 
     return (
         <Modal
             okType='primary'
-            okText='Yes'
-            cancelText='Cancel'
+            okText={t('modals.removeObject.okText')}
+            cancelText={t('modals.removeObject.cancelText')}
             title={title}
             open={visible}
             cancelButtonProps={{

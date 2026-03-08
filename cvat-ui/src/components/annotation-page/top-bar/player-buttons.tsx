@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 import React, { CSSProperties } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Col } from 'antd/lib/grid';
 import Icon from '@ant-design/icons';
 import Popover from 'antd/lib/popover';
@@ -117,6 +118,7 @@ const componentShortcuts = {
 registerComponentShortcuts(componentShortcuts);
 
 function PlayerButtons(props: Props): JSX.Element {
+    const { t } = useTranslation('annotations');
     const {
         playing,
         playPauseShortcut,
@@ -183,14 +185,14 @@ function PlayerButtons(props: Props): JSX.Element {
         } : {}),
     };
 
-    const prevRegularText = 'Go back';
-    const prevFilteredText = 'Go back with a filter';
-    const prevEmptyText = 'Go back to an empty frame';
-    const prevChapterText = 'Go to the previous chapter';
-    const nextRegularText = 'Go next';
-    const nextFilteredText = 'Go next with a filter';
-    const nextEmptyText = 'Go next to an empty frame';
-    const nextChapterText = 'Go to the next chapter';
+    const prevRegularText = t('player.goBack');
+    const prevFilteredText = t('player.goBackFiltered');
+    const prevEmptyText = t('player.goBackEmpty');
+    const prevChapterText = t('player.goBackChapter');
+    const nextRegularText = t('player.goNext');
+    const nextFilteredText = t('player.goNextFiltered');
+    const nextEmptyText = t('player.goNextEmpty');
+    const nextChapterText = t('player.goNextChapter');
 
     let prevButton = <Icon className='cvat-player-previous-button' component={PreviousIcon} onClick={onPrevFrame} />;
     let prevButtonTooltipMessage = prevRegularText;
@@ -248,7 +250,7 @@ function PlayerButtons(props: Props): JSX.Element {
                 />
 
             )}
-            <CVATTooltip title='Go to the first frame'>
+            <CVATTooltip title={t('player.goToFirstFrame')}>
                 <Icon
                     style={navIconStyle}
                     className='cvat-player-first-button'
@@ -256,7 +258,7 @@ function PlayerButtons(props: Props): JSX.Element {
                     onClick={onFirstFrame}
                 />
             </CVATTooltip>
-            <CVATTooltip title={`Go back with a step ${backwardShortcut}`}>
+            <CVATTooltip title={`${t('player.goBackStep')} ${backwardShortcut}`}>
                 <Icon
                     style={navIconStyle}
                     className='cvat-player-backward-button'
@@ -306,7 +308,7 @@ function PlayerButtons(props: Props): JSX.Element {
             </Popover>
 
             {!playing ? (
-                <CVATTooltip title={`Play ${playPauseShortcut}`}>
+                <CVATTooltip title={`${t('player.play')} ${playPauseShortcut}`}>
                     <Icon
                         style={navIconStyle}
                         className='cvat-player-play-button'
@@ -315,7 +317,7 @@ function PlayerButtons(props: Props): JSX.Element {
                     />
                 </CVATTooltip>
             ) : (
-                <CVATTooltip title={`Pause ${playPauseShortcut}`}>
+                <CVATTooltip title={`${t('player.pause')} ${playPauseShortcut}`}>
                     <Icon
                         style={navIconStyle}
                         className='cvat-player-pause-button'
@@ -365,7 +367,7 @@ function PlayerButtons(props: Props): JSX.Element {
                     {nextButton}
                 </CVATTooltip>
             </Popover>
-            <CVATTooltip title={`Go next with a step ${forwardShortcut}`}>
+            <CVATTooltip title={`${t('player.goNextStep')} ${forwardShortcut}`}>
                 <Icon
                     style={navIconStyle}
                     className='cvat-player-forward-button'
@@ -373,7 +375,7 @@ function PlayerButtons(props: Props): JSX.Element {
                     onClick={onForward}
                 />
             </CVATTooltip>
-            <CVATTooltip title='Go to the last frame'>
+            <CVATTooltip title={t('player.goToLastFrame')}>
                 <Icon
                     style={navIconStyle}
                     className='cvat-player-last-button'

@@ -1,0 +1,56 @@
+{
+    "topBar": {
+        "searchPlaceholder": "Search ...",
+        "createNewProject": "Create a new project",
+        "createFromBackup": "Create from backup"
+    },
+    "emptyList": {
+        "noResultsMatched": "No results matched your search...",
+        "noProjectsCreated": "No projects created yet...",
+        "getStarted": "To get started with your annotation project",
+        "createNewOne": "create a new one"
+    },
+    "actions": {
+        "exportDataset": "Export dataset",
+        "importDataset": "Import dataset",
+        "backupProject": "Backup Project",
+        "assignee": "Assignee",
+        "viewAnalytics": "View analytics",
+        "qualityControl": "Quality control",
+        "setupWebhooks": "Setup webhooks",
+        "organization": "Organization",
+        "delete": "Delete"
+    },
+    "confirmations": {
+        "deleteProjectTitle": "The project {{id}} will be deleted",
+        "deleteBulkProjectsTitle": "Delete {{count}} selected projects",
+        "deleteProjectContent": "All related data (tasks, annotations) will be lost. Continue?",
+        "deleteBulkProjectsContent": "All related data (tasks, annotations) for all selected projects will be lost. Continue?",
+        "deleteOk": "Delete",
+        "deleteSelectedOk": "Delete selected"
+    },
+    "bulkOperations": {
+        "updatingAssignee": "Updating assignee for project #{{id}} ({{current}}/{{total}})",
+        "deletingProject": "Deleting project #{{id}} ({{current}}/{{total}})",
+        "updatingOrganization": "Updating organization for project #{{id}} ({{current}}/{{total}})"
+    },
+    "details": {
+        "projectCreated": "Project #{{id}} created",
+        "createdBy": "by {{username}}",
+        "createdOn": "on {{date}}",
+        "assignedTo": "Assigned to"
+    },
+    "create": {
+        "title": "Create a new project",
+        "nameLabel": "Name",
+        "labelsLabel": "Labels:",
+        "issueTrackerLabel": "Issue tracker",
+        "issueTrackerExtra": "Attach issue tracker where the project is described",
+        "advancedConfiguration": "Advanced configuration",
+        "sourceStorageDescription": "Specify source storage for import resources like annotation, backups",
+        "targetStorageDescription": "Specify target storage for export resources like annotation, backups",
+        "submitAndOpen": "Submit & Open",
+        "submitAndContinue": "Submit & Continue",
+        "successNotification": "The project has been created"
+    }
+}

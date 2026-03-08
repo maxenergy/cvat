@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Row, Col } from 'antd/lib/grid';
 import Button from 'antd/lib/button';
 import Popover from 'antd/lib/popover';
@@ -43,6 +44,7 @@ interface Props {
 
 function TopBarComponent(props: Readonly<Props>): JSX.Element {
     const dispatch = useDispatch();
+    const { t } = useTranslation('projects');
     const {
         importing, query, onApplyFilter, onApplySorting, onApplySearch,
         selectedCount, onSelectAll,
@@ -69,7 +71,7 @@ function TopBarComponent(props: Readonly<Props>): JSX.Element {
                             }}
                             defaultValue={query.search ?? ''}
                             className='cvat-projects-page-search-bar'
-                            placeholder='Search ...'
+                            placeholder={t('topBar.searchPlaceholder')}
                         />
                         <ResourceSelectionInfo selectedCount={selectedCount} onSelectAll={onSelectAll} />
                     </div>
@@ -116,7 +118,7 @@ function TopBarComponent(props: Readonly<Props>): JSX.Element {
                                     onClick={(): void => history.push('/projects/create')}
                                     icon={<PlusOutlined />}
                                 >
-                                    Create a new project
+                                    {t('topBar.createNewProject')}
                                 </Button>
                                 <Button
                                     className='cvat-import-project-button'
@@ -125,7 +127,7 @@ function TopBarComponent(props: Readonly<Props>): JSX.Element {
                                     icon={importing ? <LoadingOutlined /> : <UploadOutlined />}
                                     onClick={() => dispatch(importActions.openImportBackupModal('project'))}
                                 >
-                                    Create from backup
+                                    {t('topBar.createFromBackup')}
                                 </Button>
                             </div>
                         )}

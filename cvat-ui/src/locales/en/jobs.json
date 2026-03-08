@@ -1,0 +1,94 @@
+{
+    "topBar": {
+        "searchPlaceholder": "Search ..."
+    },
+    "emptyList": {
+        "noResultsMatched": "No results matched your search...",
+        "noJobsCreated": "No jobs created yet...",
+        "getStarted": "To get started with your annotation project",
+        "createNewTask": "create a new task",
+        "orTryTo": " or try to ",
+        "createNewProject": "create a new project"
+    },
+    "filters": {
+        "state": {
+            "label": "State",
+            "new": "new",
+            "inProgress": "in progress",
+            "rejected": "rejected",
+            "completed": "completed"
+        },
+        "stage": {
+            "label": "Stage",
+            "annotation": "annotation",
+            "validation": "validation",
+            "acceptance": "acceptance"
+        },
+        "assignee": {
+            "label": "Assignee"
+        },
+        "updatedDate": {
+            "label": "Updated date"
+        },
+        "id": {
+            "label": "ID"
+        },
+        "taskName": {
+            "label": "Task name"
+        },
+        "taskId": {
+            "label": "Task ID"
+        },
+        "type": {
+            "label": "Job Type",
+            "annotation": "Annotation",
+            "consensusReplica": "Consensus replica"
+        },
+        "predefined": {
+            "assignedToMe": "Assigned to me",
+            "notCompleted": "Not completed",
+            "notAReplica": "Not a replica"
+        }
+    },
+    "selectors": {
+        "state": {
+            "placeholder": "Select a state"
+        },
+        "stage": {
+            "placeholder": "Select a stage"
+        }
+    },
+    "actions": {
+        "goToTask": "Go to the task",
+        "goToParent": "Go to parent",
+        "goToReplicas": "Go to replicas",
+        "goToProject": "Go to the project",
+        "goToBugTracker": "Go to the bug tracker",
+        "importAnnotations": "Import annotations",
+        "exportAnnotations": "Export annotations",
+        "mergeConsensusJob": "Merge consensus job",
+        "assignee": "Assignee",
+        "state": "State",
+        "stage": "Stage",
+        "viewAnalytics": "View analytics",
+        "delete": "Delete"
+    },
+    "confirmations": {
+        "mergeConsensusTitle": "The consensus job will be merged",
+        "mergeConsensusContent": "Existing annotations in the parent job will be updated. Continue?",
+        "mergeConsensusOk": "Merge",
+        "deleteJobTitle": "The job {{id}} will be deleted",
+        "deleteBulkJobsTitle": "Delete {{count}} selected jobs",
+        "deleteJobContent": "All related data (annotations) will be lost. Continue?",
+        "deleteBulkJobsContent": "All related data (annotations) for all selected jobs will be lost. Continue?",
+        "deleteOk": "Delete",
+        "deleteSelectedOk": "Delete selected"
+    },
+    "bulkOperations": {
+        "updatingJob": "Updating job #{{id}} ({{current}}/{{total}})",
+        "deletingJob": "Deleting job #{{id}} ({{current}}/{{total}})"
+    },
+    "csvExport": {
+        "exportToCSV": "Export jobs to CSV"
+    }
+}

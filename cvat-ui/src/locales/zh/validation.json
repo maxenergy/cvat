@@ -1,0 +1,14 @@
+{
+    "required": "该字段为必填项",
+    "taskNameEmpty": "任务名称不能为空",
+    "urlInvalid": "URL 不是有效的 URL",
+    "segmentSizeOverlap": "段大小必须大于重叠大小",
+    "startFrameStopFrame": "起始帧不得大于结束帧",
+    "integerMin": "值必须是大于或等于 {{min}} 的整数",
+    "integerMax": "值必须是小于或等于 {{max}} 的整数",
+    "integerRange": "值必须是 {{min}} 到 {{max}} 之间的整数",
+    "numberRange": "值无效",
+    "frameSelectionRequired": "请指定帧选择方法",
+    "projectNameRequired": "请指定名称",
+    "issueTrackerInvalid": "问题跟踪器必须是 URL"
+}

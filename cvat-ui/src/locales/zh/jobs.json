@@ -1,0 +1,94 @@
+{
+    "topBar": {
+        "searchPlaceholder": "搜索 ..."
+    },
+    "emptyList": {
+        "noResultsMatched": "没有匹配的搜索结果...",
+        "noJobsCreated": "尚未创建任何作业...",
+        "getStarted": "要开始您的标注项目",
+        "createNewTask": "创建新任务",
+        "orTryTo": " 或尝试 ",
+        "createNewProject": "创建新项目"
+    },
+    "filters": {
+        "state": {
+            "label": "状态",
+            "new": "新建",
+            "inProgress": "进行中",
+            "rejected": "已拒绝",
+            "completed": "已完成"
+        },
+        "stage": {
+            "label": "阶段",
+            "annotation": "标注",
+            "validation": "验证",
+            "acceptance": "验收"
+        },
+        "assignee": {
+            "label": "负责人"
+        },
+        "updatedDate": {
+            "label": "更新日期"
+        },
+        "id": {
+            "label": "ID"
+        },
+        "taskName": {
+            "label": "任务名称"
+        },
+        "taskId": {
+            "label": "任务 ID"
+        },
+        "type": {
+            "label": "作业类型",
+            "annotation": "标注",
+            "consensusReplica": "共识副本"
+        },
+        "predefined": {
+            "assignedToMe": "分配给我",
+            "notCompleted": "未完成",
+            "notAReplica": "非副本"
+        }
+    },
+    "selectors": {
+        "state": {
+            "placeholder": "选择状态"
+        },
+        "stage": {
+            "placeholder": "选择阶段"
+        }
+    },
+    "actions": {
+        "goToTask": "转到任务",
+        "goToParent": "转到父级",
+        "goToReplicas": "转到副本",
+        "goToProject": "转到项目",
+        "goToBugTracker": "转到问题跟踪器",
+        "importAnnotations": "导入标注",
+        "exportAnnotations": "导出标注",
+        "mergeConsensusJob": "合并共识作业",
+        "assignee": "负责人",
+        "state": "状态",
+        "stage": "阶段",
+        "viewAnalytics": "查看分析",
+        "delete": "删除"
+    },
+    "confirmations": {
+        "mergeConsensusTitle": "共识作业将被合并",
+        "mergeConsensusContent": "父作业中的现有标注将被更新。是否继续？",
+        "mergeConsensusOk": "合并",
+        "deleteJobTitle": "作业 {{id}} 将被删除",
+        "deleteBulkJobsTitle": "删除 {{count}} 个选定的作业",
+        "deleteJobContent": "所有相关数据（标注）将丢失。是否继续？",
+        "deleteBulkJobsContent": "所有选定作业的相关数据（标注）将丢失。是否继续？",
+        "deleteOk": "删除",
+        "deleteSelectedOk": "删除选定项"
+    },
+    "bulkOperations": {
+        "updatingJob": "正在更新作业 #{{id}} ({{current}}/{{total}})",
+        "deletingJob": "正在删除作业 #{{id}} ({{current}}/{{total}})"
+    },
+    "csvExport": {
+        "exportToCSV": "导出作业到 CSV"
+    }
+}

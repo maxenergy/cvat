@@ -7,10 +7,13 @@ import React from 'react';
 import Text from 'antd/lib/typography/Text';
 import { Row, Col } from 'antd/lib/grid';
 import Empty from 'antd/lib/empty';
+import { useTranslation } from 'react-i18next';
 
 import config from 'config';
 
 export default function EmptyListComponent(): JSX.Element {
+    const { t } = useTranslation('models');
+
     return (
         <div className='cvat-empty-models-list'>
             <Empty
@@ -18,17 +21,17 @@ export default function EmptyListComponent(): JSX.Element {
                     <div>
                         <Row justify='center' align='middle'>
                             <Col>
-                                <Text strong>No models deployed yet...</Text>
+                                <Text strong>{t('emptyList.noModelsDeployed')}</Text>
                             </Col>
                         </Row>
                         <Row justify='center' align='middle'>
                             <Col>
-                                <Text type='secondary'>To annotate your tasks automatically</Text>
+                                <Text type='secondary'>{t('emptyList.toAnnotateAutomatically')}</Text>
                             </Col>
                         </Row>
                         <Row justify='center' align='middle'>
                             <Col>
-                                <Text type='secondary'>deploy a model with </Text>
+                                <Text type='secondary'>{t('emptyList.deployModelWith')}</Text>
                                 <a href={`${config.NUCLIO_GUIDE}`}>nuclio</a>
                             </Col>
                         </Row>

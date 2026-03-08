@@ -1,0 +1,206 @@
+{
+    "menu": {
+        "title": "菜单",
+        "uploadAnnotations": "上传标注",
+        "exportJobDataset": "导出任务数据集",
+        "removeAnnotations": "删除标注",
+        "runActions": "运行操作",
+        "openTask": "打开任务",
+        "changeJobState": "更改任务状态",
+        "finishJob": "完成任务"
+    },
+    "save": {
+        "button": "保存",
+        "saving": "保存中...",
+        "tooltip": "保存当前更改"
+    },
+    "toolbar": {
+        "undo": "撤销",
+        "redo": "重做",
+        "done": "完成",
+        "block": "阻止",
+        "fullscreen": "全屏",
+        "guide": "指南",
+        "info": "信息",
+        "filters": "过滤器"
+    },
+    "player": {
+        "play": "播放",
+        "pause": "暂停",
+        "goToFirstFrame": "转到第一帧",
+        "goToLastFrame": "转到最后一帧",
+        "goBack": "后退",
+        "goNext": "前进",
+        "goBackFiltered": "使用过滤器后退",
+        "goNextFiltered": "使用过滤器前进",
+        "goBackEmpty": "后退到空帧",
+        "goNextEmpty": "前进到空帧",
+        "goBackChapter": "转到上一章节",
+        "goNextChapter": "转到下一章节",
+        "goBackStep": "后退一步",
+        "goNextStep": "前进一步"
+    },
+    "messages": {
+        "savingAnnotations": "CVAT 正在保存您的标注，请稍候",
+        "jobFinished": "您已将任务标记为已完成",
+        "jobStateUpdated": "任务状态已更新",
+        "guideError": "无法接收标注指南"
+    },
+    "modals": {
+        "changeJobState": {
+            "title": "您想更新当前任务状态吗？",
+            "content": "任务状态将切换为\"{{state}}\"",
+            "okText": "继续",
+            "cancelText": "取消"
+        },
+        "finishJob": {
+            "title": "您想完成任务吗？",
+            "content": "这将保存标注并将任务状态设置为\"已完成\"",
+            "okText": "继续",
+            "cancelText": "取消"
+        },
+        "removeAnnotations": {
+            "title": "删除标注",
+            "warning": "您将从客户端删除标注。",
+            "serverNote": "在您保存任务之前，它将保留在服务器上。是否继续？",
+            "selectRange": "选择范围",
+            "from": "从：",
+            "to": "到：",
+            "deleteKeyframes": "仅删除轨迹的关键帧",
+            "keyframesNote": "仅适用于范围内的标注",
+            "okText": "删除"
+        },
+        "propagate": {
+            "title": "确认传播",
+            "okText": "是",
+            "cancelText": "取消",
+            "specifyDirection": "请指定方向",
+            "howManyCopies": "您想创建多少个副本？",
+            "specifyRange": "或指定将创建副本的范围",
+            "from": "从",
+            "to": "到"
+        },
+        "removeObject": {
+            "title": "删除对象",
+            "titleLocked": "对象已锁定",
+            "okText": "是",
+            "cancelText": "取消",
+            "confirmMessage": "您确定要删除它吗？",
+            "trackWarning": "您尝试删除的对象是一个轨迹。如果继续，它将删除不同帧上的许多绘制对象。如果您只想在此帧上隐藏它，请改用外部功能。"
+        }
+    },
+    "tooltips": {
+        "undoAction": "撤销：{{action}} {{shortcut}}",
+        "redoAction": "重做：{{action}} {{shortcut}}",
+        "finishDraw": "按\"{{shortcut}}\"完成",
+        "blockTool": "按\"{{shortcut}}\"推迟运行算法"
+    },
+    "shortcuts": {
+        "saveJob": {
+            "name": "保存任务",
+            "description": "将未保存的标注更改提交到服务器"
+        },
+        "undoAction": {
+            "name": "撤销操作",
+            "description": "取消与对象相关的最新操作"
+        },
+        "redoAction": {
+            "name": "重做操作",
+            "description": "取消撤销操作"
+        },
+        "switchToolsBlocker": {
+            "name": "切换算法阻止器",
+            "description": "推迟运行交互工具的算法"
+        },
+        "nextFrame": {
+            "name": "下一帧",
+            "description": "转到下一帧"
+        },
+        "prevFrame": {
+            "name": "上一帧",
+            "description": "转到上一帧"
+        },
+        "forwardFrame": {
+            "name": "快进帧",
+            "description": "快进一步"
+        },
+        "backwardFrame": {
+            "name": "快退帧",
+            "description": "快退一步"
+        },
+        "searchForward": {
+            "name": "向前搜索",
+            "description": "搜索满足过滤器的下一帧"
+        },
+        "searchBackward": {
+            "name": "向后搜索",
+            "description": "搜索满足过滤器的上一帧"
+        },
+        "chapterBackward": {
+            "name": "上一章节",
+            "description": "转到上一章节"
+        },
+        "chapterForward": {
+            "name": "下一章节",
+            "description": "转到下一章节"
+        },
+        "playPause": {
+            "name": "播放/暂停",
+            "description": "开始/停止自动切换帧"
+        }
+    },
+    "sidebar": {
+        "tabs": {
+            "objects": "对象",
+            "labels": "标签",
+            "issues": "问题"
+        },
+        "show": "显示",
+        "hide": "隐藏",
+        "expandCollapseAll": "展开/折叠全部",
+        "showGroundTruth": "显示真实标注和冲突"
+    },
+    "objectsList": {
+        "itemsCount": "项目：{{count}}",
+        "switchLockAll": "切换全部锁定属性 {{shortcut}}",
+        "switchHiddenAll": "切换全部隐藏属性 {{shortcut}}",
+        "defaultLabelChanged": "默认标签已更改为\"{{name}}\""
+    },
+    "objectButtons": {
+        "goToPrevKeyframe": "转到上一个关键帧 {{shortcut}}",
+        "goToNextKeyframe": "转到下一个关键帧 {{shortcut}}",
+        "switchLock": "切换锁定属性 {{shortcut}}",
+        "switchOccluded": "切换遮挡属性 {{shortcut}}",
+        "switchPinned": "切换固定属性 {{shortcut}}",
+        "switchHidden": "切换隐藏属性 {{shortcut}}",
+        "switchOutside": "切换外部属性 {{shortcut}}",
+        "switchKeyframe": "切换关键帧属性 {{shortcut}}"
+    },
+    "objectMenu": {
+        "changeLabel": "更改当前标签",
+        "copyPaste": "{{copyShortcut}} 和 {{pasteShortcut}}",
+        "editShape": "Shift + 双击",
+        "sliceShape": "将形状切成两部分 {{shortcut}}",
+        "propagate": "{{shortcut}}",
+        "toBackground": "{{shortcut}}",
+        "toForeground": "{{shortcut}}",
+        "toOneLayerBackward": "{{shortcut}}",
+        "toOneLayerForward": "{{shortcut}}",
+        "changeColor": "{{shortcut}}",
+        "remove": "{{shortcut}}",
+        "runAction": "{{shortcut}}"
+    },
+    "objectDetails": {
+        "consensusScore": "共识分数",
+        "numberOfVotes": "投票数"
+    },
+    "issuesList": {
+        "findPrevFrame": "查找上一个有问题的帧",
+        "findNextFrame": "查找下一个有问题的帧",
+        "showHideAll": "显示/隐藏所有问题",
+        "showHideResolved": "显示/隐藏已解决的问题"
+    },
+    "colorPicker": {
+        "close": "关闭"
+    }
+}

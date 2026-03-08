@@ -1,0 +1,57 @@
+{
+    "topBar": {
+        "searchPlaceholder": "Search ..."
+    },
+    "emptyList": {
+        "noModelsDeployed": "No models deployed yet...",
+        "toAnnotateAutomatically": "To annotate your tasks automatically",
+        "deployModelWith": "deploy a model with "
+    },
+    "modelItem": {
+        "addedAgo": "Added {{time}}",
+        "systemModel": "System model",
+        "createdBy": "Created by {{owner}}",
+        "labels": "Labels:",
+        "provider": "Provider",
+        "type": "Type",
+        "owner": "Owner"
+    },
+    "modelModal": {
+        "title": "Model"
+    },
+    "modelRunner": {
+        "title": "Automatic annotation",
+        "model": "Model:",
+        "selectModel": "Select a model",
+        "noModelsAvailable": "No models available",
+        "setupMapping": "Setup mapping between labels and attributes",
+        "modelSpec": "Model Spec",
+        "cvatSpec": "CVAT Spec",
+        "convertMasksToPolygons": "Convert masks to polygons",
+        "cleanPreviousAnnotations": "Clean previous annotations",
+        "threshold": "Threshold",
+        "thresholdTooltip": "Minimum confidence threshold for detections. Leave empty to use the default value specified in the model settings",
+        "reidThresholdTooltip": "Minimum similarity value for shapes that can be merged",
+        "maximumDistance": "Maximum distance",
+        "maximumDistanceTooltip": "Maximum distance between shapes that can be merged",
+        "annotate": "Annotate"
+    },
+    "notifications": {
+        "couldNotGetTaskDetails": "Could not get task details",
+        "noLabelsSpecified": "This model does not have specified labels"
+    },
+    "filterConfig": {
+        "description": "Description",
+        "targetUrl": "Target URL",
+        "owner": "Owner",
+        "lastUpdated": "Last updated",
+        "type": "Type",
+        "organization": "Organization",
+        "project": "Project",
+        "id": "ID"
+    },
+    "errors": {
+        "couldNotFetchModels": "Could not fetch models",
+        "invalidPage": "Invalid page"
+    }
+}

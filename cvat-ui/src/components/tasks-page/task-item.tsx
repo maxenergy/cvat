@@ -12,6 +12,7 @@ import Button from 'antd/lib/button';
 import { MoreOutlined } from '@ant-design/icons';
 import Progress from 'antd/lib/progress';
 import Badge from 'antd/lib/badge';
+import { useTranslation } from 'react-i18next';
 import { Task, RQStatus, Request } from 'cvat-core-wrapper';
 import Preview from 'components/common/preview';
 import { ActiveInference, PluginComponent } from 'reducers';
@@ -51,13 +52,14 @@ function TaskItemComponent(props: TaskItemProps): JSX.Element {
         onClick,
     } = props;
 
+    const { t } = useTranslation('tasks');
     const isMounted = useIsMounted();
     const { itemRef, handleContextMenuClick, handleContextMenuCapture } = useContextMenuClick<HTMLDivElement>();
 
     const [importingState, setImportingState] = useState<ImportingState | null>(
         taskInstance.size > 0 ? null : {
             state: null,
-            message: 'Request current progress',
+            message: t('taskItem.requestProgress'),
             progress: 0,
         },
     );
@@ -147,21 +149,21 @@ function TaskItemComponent(props: TaskItemProps): JSX.Element {
                         <div>
                             {numOfCompleted > 0 && (
                                 <Text strong className='cvat-task-completed-progress'>
-                                    {`\u2022 ${numOfCompleted} done `}
+                                    {`\u2022 ${numOfCompleted} ${t('taskItem.done')} `}
                                 </Text>
                             )}
                             {numOfValidation > 0 && (
                                 <Text strong className='cvat-task-validation-progress'>
-                                    {`\u2022 ${numOfValidation} on review `}
+                                    {`\u2022 ${numOfValidation} ${t('taskItem.onReview')} `}
                                 </Text>
                             )}
                             {numOfAnnotation > 0 && (
                                 <Text strong className='cvat-task-annotation-progress'>
-                                    {`\u2022 ${numOfAnnotation} annotating `}
+                                    {`\u2022 ${numOfAnnotation} ${t('taskItem.annotating')} `}
                                 </Text>
                             )}
                             <Text strong type='secondary'>
-                                {`\u2022 ${numOfJobs} total`}
+                                {`\u2022 ${numOfJobs} ${t('taskItem.total')}`}
                             </Text>
                         </div>
                         <Progress
@@ -209,11 +211,11 @@ function TaskItemComponent(props: TaskItemProps): JSX.Element {
                 <br />
                 {owner && (
                     <>
-                        <Text type='secondary'>{`Created ${owner ? `by ${owner}` : ''} on ${created}`}</Text>
+                        <Text type='secondary'>{t('taskItem.createdBy', { owner, date: created })}</Text>
                         <br />
                     </>
                 )}
-                <Text type='secondary'>{`Last updated ${updated}`}</Text>
+                <Text type='secondary'>{t('taskItem.lastUpdated', { time: updated })}</Text>
             </Col>
             {renderProgress()}
             <Col span={3}>
@@ -227,7 +229,7 @@ function TaskItemComponent(props: TaskItemProps): JSX.Element {
                                 size='large'
                                 ghost
                             >
-                                Open
+                                {t('taskItem.open')}
                             </Button>
                         </Link>
                     </Col>
@@ -238,7 +240,7 @@ function TaskItemComponent(props: TaskItemProps): JSX.Element {
                             onClick={handleContextMenuClick}
                             className='cvat-task-item-actions-button cvat-actions-menu-button'
                         >
-                            <Text className='cvat-text-color'>Actions</Text>
+                            <Text className='cvat-text-color'>{t('taskItem.actions')}</Text>
                             <MoreOutlined className='cvat-menu-icon' />
                         </div>
                     </Col>

@@ -1,0 +1,57 @@
+{
+    "topBar": {
+        "searchPlaceholder": "搜索..."
+    },
+    "emptyList": {
+        "noModelsDeployed": "尚未部署模型...",
+        "toAnnotateAutomatically": "要自动标注您的任务",
+        "deployModelWith": "请使用 "
+    },
+    "modelItem": {
+        "addedAgo": "添加于 {{time}}",
+        "systemModel": "系统模型",
+        "createdBy": "由 {{owner}} 创建",
+        "labels": "标签：",
+        "provider": "提供者",
+        "type": "类型",
+        "owner": "所有者"
+    },
+    "modelModal": {
+        "title": "模型"
+    },
+    "modelRunner": {
+        "title": "自动标注",
+        "model": "模型：",
+        "selectModel": "选择模型",
+        "noModelsAvailable": "无可用模型",
+        "setupMapping": "设置标签和属性之间的映射",
+        "modelSpec": "模型规范",
+        "cvatSpec": "CVAT 规范",
+        "convertMasksToPolygons": "将掩码转换为多边形",
+        "cleanPreviousAnnotations": "清除之前的标注",
+        "threshold": "阈值",
+        "thresholdTooltip": "检测的最小置信度阈值。留空则使用模型设置中指定的默认值",
+        "reidThresholdTooltip": "可以合并的形状的最小相似度值",
+        "maximumDistance": "最大距离",
+        "maximumDistanceTooltip": "可以合并的形状之间的最大距离",
+        "annotate": "标注"
+    },
+    "notifications": {
+        "couldNotGetTaskDetails": "无法获取任务详情",
+        "noLabelsSpecified": "此模型未指定标签"
+    },
+    "filterConfig": {
+        "description": "描述",
+        "targetUrl": "目标 URL",
+        "owner": "所有者",
+        "lastUpdated": "最后更新",
+        "type": "类型",
+        "organization": "组织",
+        "project": "项目",
+        "id": "ID"
+    },
+    "errors": {
+        "couldNotFetchModels": "无法获取模型",
+        "invalidPage": "无效页面"
+    }
+}

@@ -1150,6 +1150,13 @@ export interface RequestsState {
     query: RequestsQuery;
 }
 
+export interface I18nState {
+    currentLanguage: string;
+    availableLanguages: string[];
+    isLoading: boolean;
+    error: string | null;
+}
+
 export interface NavigationState {
     prevLocation: string | null;
 }
@@ -1179,9 +1186,16 @@ export interface CombinedState {
     requests: RequestsState;
     bulkActions: BulkActionsState;
     serverAPI: ServerAPIState;
+    i18n: I18nState;
     navigation: NavigationState;
 }
 
 export interface Indexable {
     [index: string]: any;
 }
+
+// I18n selectors
+export const selectCurrentLanguage = (state: CombinedState): string => state.i18n.currentLanguage;
+export const selectAvailableLanguages = (state: CombinedState): string[] => state.i18n.availableLanguages;
+export const selectI18nLoading = (state: CombinedState): boolean => state.i18n.isLoading;
+export const selectI18nError = (state: CombinedState): string | null => state.i18n.error;
